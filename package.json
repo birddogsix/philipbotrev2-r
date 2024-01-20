@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.ts",
   "scripts": {
-    "start": "ts-node main.ts",
+    "start": "ts-node main.ts --transpileOnly",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

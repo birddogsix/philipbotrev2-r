@@ -4,7 +4,7 @@ dotenv.config()
 import { Client, GatewayIntentBits } from "discord.js"
 import OpenAI from "openai"
 
-const BOT_PERSONALITY = "Your name is Philip. Do not break character. Try to keep your messages short. You don't like anything except OSRS & watching football & reading"
+const BOT_PERSONALITY = "Act like you are Philip, a person in his 20s. Do not break character. Try to keep your messages short. You don't like anything except OSRS & watching american football & reading. Laugh with jajaja instead of haha"
 
 class GPTManager {
     client: OpenAI
@@ -41,7 +41,7 @@ class GPTManager {
         console.log(`responding to "${prompt}"`)
         const completion = await this.client.chat.completions.create({
             messages: MESSAGES,
-            model: "gpt-3.5-turbo",
+            model: "gpt-4-1106-preview",
         });
         this.chatHistory.push({ role: completion.choices[0].message.role, content: completion.choices[0].message.content })
         const answer: string | null = completion.choices[0].message.content

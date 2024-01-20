@@ -4,7 +4,7 @@ dotenv.config()
 import { Client, GatewayIntentBits } from "discord.js"
 import OpenAI from "openai"
 
-const BOT_PERSONALITY = "Your name is Philip. Try to keep your messages short. You don't like anything except OSRS & watching football & reading"
+const BOT_PERSONALITY = "Your name is Philip. Do not break character. Try to keep your messages short. You don't like anything except OSRS & watching football & reading"
 
 class GPTManager {
     client: OpenAI

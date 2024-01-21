@@ -34,7 +34,7 @@ class GPTManager {
         this.chatHistory.push({ role: "user", content: `${authorName}: ${prompt}` })
         if (this.chatHistory.reduce((a, b): string => a + b.content, "").length > this.characterCountLimit) {
             let removedMessage: OpenAI.ChatCompletionMessageParam | undefined = this.chatHistory.shift()
-            console.log(`removed message "${removedMessage}" due to character limit`)
+            console.log(`removed message "${removedMessage?.content}" due to character limit`)
         }
 
         const MESSAGES: OpenAI.ChatCompletionMessageParam[] = [{ role: "system", content: this.personality }, ...this.chatHistory]
